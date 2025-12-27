@@ -128,3 +128,17 @@
   @apply flex items-center justify-center gap-3 bg-linear-to-r
   from-[#FF9324] to-[#e9944b] text-sm font-semibold text-white px-7 rounded-lg hover:bg-black hover:text-white transition-colors cursor-pointer hover:shadow-2xl hover:shadow-orange-300;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-in-out;
+}

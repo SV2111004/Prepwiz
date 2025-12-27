@@ -14,18 +14,42 @@ const SummaryCard = ({
 }) => {
   return (
     <div
-      className="bg-white border border-gray-300/40 rounded-xl p-2 overflow-hidden cursor-pointer hover:shadow-xl shadow-gray-100 relative group"
-      onClick={onSelect}
-    >
+  className="
+    bg-white 
+    border border-gray-200
+    rounded-xl 
+    p-2
+    min-h-[200px]
+    w-full max-w-full
+
+    overflow-hidden 
+    cursor-pointer 
+    shadow-md
+    hover:shadow-2xl
+    hover:-translate-y-0.5
+    hover:ring-1 hover:ring-gray-300
+    transition-all duration-300 ease-out
+    relative group
+  "
+  onClick={onSelect}
+>
       <div
-        className="rounded-lg p-4 cursor-pointer relative"
-        style={{
-          background: colors.bgcolor,
-        }}
-      >
+  className="
+    rounded-lg 
+    p-8
+    cursor-pointer 
+    relative
+    transition-all duration-300
+    group-hover:brightness-[0.98]
+  "
+  style={{
+    background: colors.bgcolor,
+  }}
+>
+
         <div className="flex items-start">
           <div className="shrink-0 w-12 h-12 bg-white rounded-md flex items-center justify-center mr-4">
-            <span className="text-lg font-semibold text-black">
+            <span className="text-2xl font-bold text-black">
               {getInitials(role)}
             </span>
           </div>
@@ -33,7 +57,7 @@ const SummaryCard = ({
           <div className="grow">
             <div className="flex justify-between items-start">
               <div>
-                <h2 className="text-[17px] font-medium">{role}</h2>
+                <h2 className="text-[19px] font-medium">{role}</h2>
                 <p className="text-xs font-medium text-gray-900">
                   {topicsToFocus}
                 </p>
@@ -42,14 +66,26 @@ const SummaryCard = ({
           </div>
         </div>
         <button
-          className="hidden group-hover:flex items-center gap-2 text-xs text-rose-500 font-medium bg-rose-50 px-3 py-1 rounded text text-nowrap border border-rose-100 hover:border-rose-200 cursor-pointer absolute top-0 right-0"
-          onClick={(e) => {
-            e.stopPropagation();
-            onDelete();
-          }}
-        >
-          <LuTrash2 />
-        </button>
+  className="
+    hidden group-hover:flex 
+    items-center gap-2 
+    text-xs text-rose-500 font-medium 
+    bg-rose-50 px-3 py-1 
+    rounded-full 
+    border border-rose-100 
+    hover:border-rose-300 
+    hover:bg-rose-100
+    transition-all duration-200
+    absolute top-2 right-2
+  "
+  onClick={(e) => {
+    e.stopPropagation();
+    onDelete();
+  }}
+>
+  <LuTrash2 />
+</button>
+
       </div>
 
       <div className="px-3 pb-3">

@@ -31,11 +31,11 @@ const QuestionCard = ({
       <div className="bg-white rounded-lg mb-4 overflow-hidden py-4 px-5 shadow-xl shadow-gray-100/70 border border-gray-100/60 group">
         <div className="flex items-start justify-between cursor-pointer">
           <div className="flex items-start gap-3.5">
-            <span className="text-xs md:text-[15px] font-semibold text-gray-400 leading-4.5">
+            <span className="text-xs md:text-[20px] font-semibold text-gray-400 leading-4.5">
               Q
             </span>
             <h3
-              className="text-xs md:text-[14px] font-medium text-gray-800 mr-0 md:mr-20"
+              className="text-xs md:text-[18px] font-medium text-gray-800 mr-0 md:mr-20"
               onClick={toggleExpand}
             >
               {question}

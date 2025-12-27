@@ -145,7 +145,7 @@ const InterviewPrep = () => {
       />
 
       <div className="container mx-auto pt-4 pb-4 px-4 md:px-0">
-        <h2 className="text-lg font-semibold color-black">Interview Q & A</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-3 color-black">Interview Q & A</h2>
 
         <div className="grid grid-cols-12 gap-4 mt-5 mb-10">
           <div
@@ -186,7 +186,10 @@ const InterviewPrep = () => {
                         sessionData?.questions?.length == index + 1 && (
                           <div className="">
                             <button
-                              className="flex items-center gap-3 text-sm text-white font-medium bg-black px-5 py-2 mr-2 rounded text-nowrap cursor-pointer"
+                              className="flex items-center gap-3 text-sm text-white font-medium
+  bg-linear-to-r from-gray-900 to-gray-600
+  px-6 py-2 rounded-full
+  hover:scale-105 transition-all duration-300 text-nowrap cursor-pointer"
                               disabled={isLoading || isUpdateLoader}
                               onClick={uploadMoreQuestions}
                             >

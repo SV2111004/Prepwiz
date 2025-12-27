@@ -3,15 +3,24 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="h-16 bg-white border border-b border-gray-200/50 backdrop-blur-[2px] py-2.5px px-4 md:px-0 sticky top-0 z-50">
-      <div className="container mx-auto h-full flex items-center justify-between gap-5">
+    <div className=" h-16
+      sticky top-0 z-50
+      backdrop-blur-md
+      bg-linear-to-r from-yellow-100 via-white to-yellow-100
+      border-b border-orange-200/40
+      shadow-sm">
+
+      <div className="container mx-auto h-full flex items-center justify-between px-4 md:px-6">
         <Link to={"/dashboard"}>
-          <h2 className="text-lg md:text-xl font-semibold text-black leading-5">
-            PREPWIZ
-          </h2>
+          <h2 className="text-lg md:text-3xl font-extrabold tracking-wide text-transparent bg-clip-text bg-linear-to-r from-orange-700 to-amber-500 group-hover:scale-105 transition-transform duration-300">
+  PREPWIZ
+</h2>
+
         </Link>
 
-        <ProfileInfoCard />
+        <div className="flex items-center gap-3">
+          <ProfileInfoCard />
+        </div>
       </div>
     </div>
   );
