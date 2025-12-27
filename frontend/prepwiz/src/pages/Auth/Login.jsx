@@ -2,13 +2,16 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
 import { validateEmail } from "../../utils/helper";
+import axiosinstance from "../../utils/axiosinstance";
+import { API_PATHS } from "../../utils/ApiPaths";
+import { UserContext } from "../../context/userContext";
 
 const Login = ({ setCurrentPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
-  
+  const { updateUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -27,8 +30,9 @@ const Login = ({ setCurrentPage }) => {
 
     setError("");
 
+    //login API call
     try {
-      const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, {
+      const response = await axiosinstance.post(API_PATHS.AUTH.LOGIN, {
         email,
         password,
       });

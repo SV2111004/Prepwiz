@@ -1,20 +1,28 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
 import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
 import { validateEmail } from "../../utils/helper";
+import { UserContext } from "../../context/userContext";
+import axiosinstance from "../../utils/axiosinstance";
+import { API_PATHS } from "../../utils/ApiPaths";
+import uploadImage from "../../utils/uploadimage"
 
 const SignUp = ({ setCurrentPage }) => {
   const [profilePic, setProfilePic] = useState(null);
+  const [preview, setPreview] = useState(null);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState(null);
 
+  const { updateUser } = useContext(UserContext);
+
   const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
+    let profileImageUrl = "";
     e.preventDefault();
 
     if (!fullName) {
@@ -31,7 +39,30 @@ const SignUp = ({ setCurrentPage }) => {
 
     setError("");
 
+
+    //SIGNUP API call
     try {
+      //upload img if present
+      if (profilePic) {
+        const imgUploadRes = await uploadImage(profilePic);
+        console.log("image", imgUploadRes);
+        profileImageUrl = imgUploadRes.imageUrl || "";
+      }
+
+      const response = await axiosinstance.post(API_PATHS.AUTH.REGISTER, {
+        name: fullName,
+        email,
+        password,
+        profileImageUrl,
+      });
+
+      const { token } = response.data;
+
+      if (token) {
+        localStorage.setItem("token", token);
+        updateUser(response.data);
+        navigate("/dashboard");
+      }
     } catch (error) {
       if (error.response && error.response.data.message) {
         setError(error.response.data.message);
@@ -47,12 +78,15 @@ const SignUp = ({ setCurrentPage }) => {
         Join us today by entering your details below.
       </p>
       <form onSubmit={handleSignUp}>
+        
+
         <ProfilePhotoSelector
-          image={profilePic}
+         image={profilePic}
           setImage={setProfilePic}
-          preview={profilePic}
-          setPreview={setProfilePic}
+          preview={preview}
+          setPreview={setPreview}
         />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           <Input
             value={fullName}
