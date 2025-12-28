@@ -27,6 +27,10 @@ const Login = ({ setCurrentPage }) => {
       setError("Please enter the password.");
       return;
     }
+    if (password.length < 8) {
+    setError("Password must be at least 8 characters long.");
+    return;
+    }
 
     setError("");
 

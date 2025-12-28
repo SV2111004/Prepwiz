@@ -18,9 +18,9 @@ const Navbar = () => {
 
         </Link>
 
-        <div className="flex items-center gap-3">
+        
           <ProfileInfoCard />
-        </div>
+        
       </div>
     </div>
   );

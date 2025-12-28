@@ -37,6 +37,11 @@ const SignUp = ({ setCurrentPage }) => {
       setError("Please enter a password");
     }
 
+    if (password.length < 8) {
+    setError("Password must be at least 8 characters long.");
+    return;
+    }
+    
     setError("");
 
 
