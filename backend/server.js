@@ -13,14 +13,20 @@ const {generateInterviewQuestions,generateConceptExplanation} = require("./contr
 const app = express();
 
 //middleware to handle CORS
+const cors = require("cors");
+
 app.use(
   cors({
-    origin:"*",
+    origin: [
+      "http://localhost:5173",       // local dev
+      "https://prepwiz.netlify.app"  // deployed frontend
+    ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-
+    credentials: true,
   })
 );
+
 
 //middleware
 app.use(express.json());
