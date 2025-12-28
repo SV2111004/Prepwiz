@@ -21,7 +21,7 @@ const ProfileInfoCard = () => {
           <img
             src={
               user.profileImageUrl
-                ? `${BACKEND_URL}${user.profileImageUrl}`
+                ? user.profileImageUrl
                 : ""
             }
             alt="profile"
