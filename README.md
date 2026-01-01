@@ -7,6 +7,11 @@ Users can create interview prep sessions, generate role-specific Q&A using AI, p
 
 ---
 
+## 🌐 Live Demo
+👉 https://prepwiz.netlify.app/
+
+---
+
 ## 🌟 Features
 
 - 🔐 **Authentication**
