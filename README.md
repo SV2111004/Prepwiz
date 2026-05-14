@@ -84,7 +84,7 @@ The platform allows users to create interview preparation sessions, generate rol
 
 ---
 
-# 🏗 Backend Engineering Highlights
+# Highlights
 
 * Designed RESTful APIs using Express.js
 * Implemented JWT authentication and route protection
