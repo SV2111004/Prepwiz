@@ -1,9 +1,8 @@
-# 🚀 PrepWiz [PREParation-WIZard] — AI-Powered Interview Preparation Platform
+# 🚀 PrepWiz — AI-Powered Interview Preparation Platform
 
+PrepWiz is a full-stack MERN application designed to help users prepare for technical interviews through AI-generated interview questions, explanations, and session-based learning workflows.
 
-PrepWiz is a full-stack MERN application that helps users prepare for technical interviews using **AI-generated questions, explanations, and session-based learning**.
-
-Users can create interview prep sessions, generate role-specific Q&A using AI, pin important questions, and track progress — all inside a clean, modern UI.
+The platform allows users to create interview preparation sessions, generate role-specific interview questions using AI, pin important questions, and manage their preparation progress through a clean and modern user experience.
 
 ---
 
@@ -12,119 +11,190 @@ Users can create interview prep sessions, generate role-specific Q&A using AI, p
 
 ---
 
-## 🌟 Features
+# ✨ Key Features
 
-- 🔐 **Authentication**
-  - User signup & login with JWT authentication
-  - Secure password hashing using bcrypt
+## 🔐 Authentication & Security
 
-- 🧠 **AI-Powered Question Generation**
-  - Generate interview questions based on:
-    - Role
-    - Experience level
-    - Topics to focus on
-  - AI-generated explanations for deeper understanding
+* JWT-based authentication
+* Secure password hashing using bcrypt
+* Protected API routes using middleware
+* Persistent login sessions
+* Environment variable based secret management
 
-- 📁 **Session-Based Learning**
-  - Create multiple interview prep sessions
-  - Each session stores its own questions & answers
-  - Pin important questions for quick access
+## 🧠 AI-Powered Interview Preparation
 
-- 🎨 **Modern UI / UX**
-  - Responsive design (mobile + desktop)
-  - Smooth animations using Framer Motion
-  - Clean gradients & glassmorphism effects
+* Generate interview questions based on:
 
-- 📸 **Profile Image Upload**
-  - Upload and store profile pictures using Multer
+  * Job role
+  * Experience level
+  * Focus topics
+* AI-generated explanations for concept understanding
+* Dynamic content generation using Google Gemini API
 
----
+## 📁 Session-Based Learning
 
-## 🛠 Tech Stack
+* Create multiple preparation sessions
+* Organize questions session-wise
+* Save and revisit previous interview sessions
+* Pin important questions for quick revision
 
-### Frontend
-- React + Vite
-- Tailwind CSS
-- Framer Motion
-- Axios
-- React Router
+## 📸 Profile Management
 
-### Backend
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- JWT Authentication
-- Multer (file uploads)
+* Upload and manage profile pictures
+* File upload handling using Multer
 
-### AI
-- Google Gemini API (for question & explanation generation)
+## 🎨 Modern User Experience
+
+* Responsive UI for desktop and mobile
+* Smooth animations using Framer Motion
+* Clean and minimal design system
+* Fast frontend performance using Vite
 
 ---
 
-## 📂 Project Structure
-```text
+# 🛠 Tech Stack
+
+## Frontend
+
+* React.js
+* Vite
+* Tailwind CSS
+* Framer Motion
+* Axios
+* React Router DOM
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
+* JWT Authentication
+* Multer
+
+## AI Integration
+
+* Google Gemini API
+
+## Deployment
+
+* Frontend: Netlify
+* Backend: Render
+* Database: MongoDB Atlas
+
+---
+
+# 🏗 Backend Engineering Highlights
+
+* Designed RESTful APIs using Express.js
+* Implemented JWT authentication and route protection
+* Structured scalable MongoDB schemas using Mongoose
+* Built modular MVC backend architecture
+* Integrated Google Gemini API for dynamic AI content generation
+* Managed middleware for authentication, CORS, and JSON parsing
+* Implemented session-based database design for structured interview workflows
+* Configured cloud deployment using Render and MongoDB Atlas
+* Managed environment variables securely using dotenv
+
+---
+
+# 📂 Project Structure
+
+```bash
 Prepwiz/
 │
 ├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── utils/
-│   │   ├──pages/
-│   │   └── context/
-│   └── vite.config.js
+│   └── prepwiz/
+│       ├── src/
+│       │   ├── components/
+│       │   ├── pages/
+│       │   ├── context/
+│       │   ├── utils/
+│       │   └── assets/
+│       ├── public/
+│       ├── package.json
+│       └── vite.config.js
 │
 ├── backend/
 │   ├── config/
 │   ├── controllers/
-│   ├── routes/
-│   ├── models/
 │   ├── middleware/
-│   ├── utils/
+│   ├── models/
+│   ├── routes/
 │   ├── uploads/
+│   ├── utils/
+│   ├── .env
+│   ├── package.json
 │   └── server.js
 │
 └── README.md
-
-
 ```
 
-## ⚙️ Environment Variables
+---
 
-Create a `.env` file inside **backend/**:
+# ⚙️ Environment Variables
+
+Create a `.env` file inside the `backend/` directory.
 
 ```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 GEMINI_API_KEY=your_gemini_api_key
-
 ```
+
+
+
+
+# 🚀 Getting Started
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/SV2111004/Prepwiz.git
+cd Prepwiz
+```
+
 ---
-## 🚀 Getting Started
 
-1️⃣ Clone the Repository
-```
-git clone https://github.com/your-username/prepwiz.git
-cd prepwiz
-```
-2️⃣ Install Dependencies
+## 2️⃣ Backend Setup
 
-Backend
-```
+```bash
 cd backend
 npm install
 npm run dev
 ```
 
-Frontend
+Backend runs on:
+
+```bash
+http://localhost:8000
 ```
+
+---
+
+## 3️⃣ Frontend Setup
+
+```bash
 cd frontend/prepwiz
 npm install
 npm run dev
 ```
 
+
+
 ---
 
-👩‍💻 Built By
+# 📌 Future Improvements
+
+* Interview analytics dashboard
+* Bookmark and revision system
+* Mock interview support
+
+---
+
+# 👩‍💻 Built By
+
 Shubhra Varshney
+
+
