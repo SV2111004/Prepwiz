@@ -143,7 +143,35 @@ JWT_SECRET=your_jwt_secret
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
+---
 
+# 🔌 API Endpoints
+
+## Authentication
+
+| Method | Endpoint             | Description         |
+| ------ | -------------------- | ------------------- |
+| POST   | `/api/auth/register` | Register a new user |
+| POST   | `/api/auth/login`    | Login existing user |
+| GET    | `/api/auth/profile`  | Get user profile    |
+
+## Sessions
+
+| Method | Endpoint            | Description        |
+| ------ | ------------------- | ------------------ |
+| GET    | `/api/sessions`     | Get all sessions   |
+| POST   | `/api/sessions`     | Create new session |
+| DELETE | `/api/sessions/:id` | Delete session     |
+
+## Questions & AI
+
+| Method | Endpoint                       | Description                     |
+| ------ | ------------------------------ | ------------------------------- |
+| POST   | `/api/ai/generate-questions`   | Generate AI interview questions |
+| POST   | `/api/ai/generate-explanation` | Generate concept explanation    |
+| GET    | `/api/questions/:sessionId`    | Fetch questions by session      |
+
+---
 
 
 # 🚀 Getting Started
@@ -187,6 +215,7 @@ npm run dev
 
 # 📌 Future Improvements
 
+* Input validation using Joi/Zod
 * Interview analytics dashboard
 * Bookmark and revision system
 * Mock interview support
